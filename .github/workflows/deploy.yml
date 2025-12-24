@@ -37,7 +37,6 @@ jobs:
       - name: Sync files to S3
         run: |
           aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET_NAME }} --delete
-        env:
           # 你需要再建立一個名為 AWS_S3_BUCKET_NAME 的 Secret
           # 或者直接將 bucket name 寫在這裡 (較不推薦)
 
@@ -45,6 +44,5 @@ jobs:
       - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
-        env:
           # 你需要再建立一個名為 CLOUDFRONT_DISTRIBUTION_ID 的 Secret
           # 它是你的 CloudFront Distribution ID (例如 E12345ABCDEF)
