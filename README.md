@@ -1,6 +1,7 @@
 # Vue 靜態網站自動化部署範例
 
 本專案是一個 Vue.js 應用程式，展示如何透過 **GitHub Actions** 實現自動化部署，並利用 **AWS S3** 與 **CloudFront** 進行安全且高效的網站託管。
+AWS S3及 CloudFront部署程式碼置於: https://github.com/Wells-Huang/terraform_static_vuepage_deployment
 
 ## 🎯 核心目標
 
